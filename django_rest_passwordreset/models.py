@@ -74,7 +74,7 @@ class ResetPasswordToken(models.Model):
         if not self.key:
             self.key = self.generate_key()
         if self.id is None:
-            self.id = self.__class__.objects.count()
+            self.id = self.__class__.objects.count() + 1
         super(ResetPasswordToken, self).save(*args, **kwargs)
         return super(ResetPasswordToken, self).save(*args, **kwargs)
 
