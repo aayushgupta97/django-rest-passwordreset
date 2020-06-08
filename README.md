@@ -333,6 +333,8 @@ Apparently, the following piece of code in the Django Model prevents MongodB fro
 ```
 
 See issue #49 for details.
+Fixed for mongodb here: (with autoincrementing id field)
+https://github.com/aayushgupta97/django-rest-passwordreset
 
 ## Contributions
 
