@@ -33,9 +33,9 @@ class ResetPasswordToken(models.Model):
         """ generates a pseudo random code using os.urandom and binascii.hexlify """
         return TOKEN_GENERATOR_CLASS.generate_token()
 
-    id = models.IntegerField(
-        primary_key=True
-    )
+    # id = models.IntegerField(
+    #     primary_key=True
+    # )
 
     user = models.ForeignKey(
         AUTH_USER_MODEL,
@@ -73,9 +73,9 @@ class ResetPasswordToken(models.Model):
     def save(self, *args, **kwargs):
         if not self.key:
             self.key = self.generate_key()
-        if self.id is None:
-            self.id = self.__class__.objects.count() + 1
-        super(ResetPasswordToken, self).save(*args, **kwargs)
+        # if self.id is None:
+        #     self.id = self.__class__.objects.count() + 1
+        # super(ResetPasswordToken, self).save(*args, **kwargs)
         return super(ResetPasswordToken, self).save(*args, **kwargs)
 
     def __str__(self):
